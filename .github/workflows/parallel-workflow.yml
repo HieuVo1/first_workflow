@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - master
+
 jobs:
   build-and-test-1:
     runs-on: ubuntu-latest
@@ -17,7 +18,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: latest
-      
+
       - name: Print a message for master branch
         if: github.ref == 'refs/heads/master'
         run: echo "This is master master"
@@ -25,8 +26,8 @@ jobs:
       - name: Print a message for non-master branch
         if: github.ref != 'refs/heads/master'
         run: echo "This is not master master"
-      
-      -name: Run test
+
+      - name: Run test
         run: npm test
 
       - name: Debug message
@@ -44,7 +45,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: latest
-      
+
       - name: Print a message for master branch
         if: github.ref == 'refs/heads/master'
         run: echo "This is master master"
@@ -52,8 +53,8 @@ jobs:
       - name: Print a message for non-master branch
         if: github.ref != 'refs/heads/master'
         run: echo "This is not master master"
-      
-      -name: Run test
+
+      - name: Run test
         run: npm test
 
       - name: Debug message
